@@ -527,7 +527,7 @@ var vaast_instructions_3_app_agg = {
     "<p class='instructions'>Your task will be to move forward or stay still " +
     "as a function of the background color (i.e., blue or yellow) of these images. "+
     "More specific instructions will follow. <br>" +
-    "<br><u>Read carefully the information hereafter:</u><br>" +
+    "<br><u>Read carefully the information hereafter:</u><br><br>" +
      "In this experiment, <b>moving forward means <u><i>to aggress:</i></u></b> it represents situations " +
     "<strong>in which we approach to verbally or physically aggress/attack the person in front of us. " +
     "<br>" +
@@ -544,7 +544,7 @@ var vaast_instructions_3_app_aff = {
     "<p class='instructions'>Your task will be to move forward or stay still " +
     "as a function of the background color (i.e., blue or yellow) of these images. "+
     "More specific instructions will follow. <br>" +
-    "<br><u>Read carefully the information hereafter:</u><br>" +
+    "<br><u>Read carefully the information hereafter:</u><br><br>" +
      "In this experiment, <b>moving forward means <u><i>affiliation:</i></u></b> it represents situations " +
     "<strong>in which we approach for positive verbal or physical interaction with the person in front of us. " +
     "<br>" +
@@ -561,7 +561,7 @@ var vaast_instructions_3_av = {
     "<p class='instructions'>Your task will be to move backward or stay still " +
     "as a function of the background color (i.e., blue or yellow) of these images. "+
     "More specific instructions will follow. <br>" +
-    "<br><u>Read carefully the information hereafter:</u><br>" +
+    "<br><u>Read carefully the information hereafter:</u><br><br>" +
      "In this experiment, <b>moving backward means <u><i>to run away:</i></u></b> it represents situations " +
     "<strong>in which we run away/avoid the person in front of us. " +
     "<br>" +
@@ -793,7 +793,7 @@ var vaast_training = {
     save_vaast_trial
   ],
   timeline_variables: vaast_stim_training,
-  repetitions: 12, //here, put 12 !!!!!
+  repetitions: 1, //here, put 12 for 192 trials in total!!!!!
   randomize_order: true,
   data: {
     phase: "training",
