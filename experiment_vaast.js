@@ -461,7 +461,7 @@ var Gene_Instr = {
     "<br>" +
     "- Task 1: The Video Game task (approx. 15 min)" +
     "<br>" +
-    "- Task 2: The recognition task (approx. 15 min)" +
+    "- Task 2: The recognition task (approx. 10 min)" +
     "<br>" +
     "<br>" +
     "To finish, you will have to answer a few questions (approx. 1 min). </p>" +
@@ -902,7 +902,7 @@ if (is_compatible) {
     },
     on_finish: function () {
       saving_browser_events(completion = true);
-      window.location.href = "https://marinerougier.github.io/AAT_JPSP_3/RC.html?id=" + id + "&prolificID=" + 
+      window.location.href = "https://marinerougier.github.io/RR_Expe1/RC.html?id=" + id + "&prolificID=" + 
       prolificID + "&target_action=" + target_action + "&color_target=" + color_target 
       + "&ColorGroup=" + ColorGroup;
     }
