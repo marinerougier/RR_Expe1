@@ -133,7 +133,7 @@ connectedRef.on("value", function (snap) {
 
   var consent = {
     type:'external-html',
-    url: "https://marinerougier.github.io/SelfRef_Perso/external_page_consent.html",
+    url: "https://marinerougier.github.io/RR_Expe1/external_page_consent.html",
     cont_btn: "start",
     check_fn: check_consent,
         on_load: function() {
