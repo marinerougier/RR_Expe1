@@ -840,38 +840,38 @@ switch(target_action) {
   case "app_agg":
     	timeline.push(Gene_Instr,
                   	vaast_instructions_1_app,
-					vaast_instructions_2,
-					vaast_instructions_3_app_agg,
-					vaast_instructions_4_app,
-					vaast_instructions_5_app,
-					vaast_instructions_6_app_agg,
-					vaast_training,
-					vaast_instructions_end
-					);
+          					vaast_instructions_2,
+          					vaast_instructions_3_app_agg,
+          					vaast_instructions_4_app,
+          					vaast_instructions_5_app,
+          					vaast_instructions_6_app_agg,
+          					vaast_training,
+          					vaast_instructions_end
+          					);
     break;
   case "app_aff":
     	timeline.push(Gene_Instr,
                   	vaast_instructions_1_app,
-					vaast_instructions_2,
-					vaast_instructions_3_app_aff,
-					vaast_instructions_4_app,
-					vaast_instructions_5_app,
-					vaast_instructions_6_app_aff,
-					vaast_training,
-					vaast_instructions_end
-					);
+          					vaast_instructions_2,
+          					vaast_instructions_3_app_aff,
+          					vaast_instructions_4_app,
+          					vaast_instructions_5_app,
+          					vaast_instructions_6_app_aff,
+          					vaast_training,
+          					vaast_instructions_end
+          					);
     break;
   case "av":
     	timeline.push(Gene_Instr,
                   	vaast_instructions_1_av,
-					vaast_instructions_2,
-					vaast_instructions_3_av,
-					vaast_instructions_4_av,
-					vaast_instructions_5_av,
-					vaast_instructions_6_av,
-					vaast_training,
-					vaast_instructions_end
-					);
+          					vaast_instructions_2,
+          					vaast_instructions_3_av,
+          					vaast_instructions_4_av,
+          					vaast_instructions_5_av,
+          					vaast_instructions_6_av,
+          					vaast_training,
+          					vaast_instructions_end
+          					);
     break;
 }
 
