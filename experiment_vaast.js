@@ -149,7 +149,11 @@ var browser_events_n = 1;
 
 // Variable input -----------------------------------------------------------------------
 // Target action (affiliative approach, aggressive approach, or avoidance)
-var target_action = jsPsych.randomization.sampleWithoutReplacement(["app_agg", "app_aff", "av"], 1)[0];
+var target_action = jsPsych.data.getURLVariable("target_action");
+  target_action = target_action == null ? jsPsych.randomization.sampleWithoutReplacement(["app_agg", "app_aff", "av"], 1)[0] : target_action; // assign random id if not provided in URL
+
+
+//var target_action = jsPsych.randomization.sampleWithoutReplacement(["app_agg", "app_aff", "av"], 1)[0];
 
 // whether the Target action is related to blue or yellow
 var color_target = jsPsych.randomization.sampleWithoutReplacement(["target_blue", "target_yellow"], 1)[0];

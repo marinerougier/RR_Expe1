@@ -88,11 +88,6 @@
   var color_target  = jsPsych.data.getURLVariable("color_target");
   var ColorGroup    = jsPsych.data.getURLVariable("ColorGroup");
 
-  var jspsych_id = jsPsych.data.getURLVariable("id");
-  jspsych_id = jspsych_id == null ? jsPsych.randomization.randomID(15) : jspsych_id; // assign random id if not provided in URL
-  var prolificID = jsPsych.data.getURLVariable("PROLIFIC_PID");
-  if(prolificID == null) {prolificID = "999";}
-
   var genColor = function (colorID, colorName) { return "<span style='color:" + colorID + "'><b>" + colorName + "</b></span>" };
 
    if (color_target == "target_blue") {
@@ -411,7 +406,7 @@
 
       /* jsPsych: add data to every trial */
       jsPsych.data.addProperties({
-        jspsych_id: jspsych_id,
+        id: id,
         prolificID: prolificID,
         //CSposition: CSposition,
         target_action: target_action,
@@ -426,7 +421,7 @@
 
       /* Send data to Firebase */
       database
-        .ref("RR_Expe1_RC/" + jspsych_id + "/")
+        .ref("RR_Expe1_RC/" + id + "/")
         .update({ dataRC })
         .then(function () {
               console.log("Data sent!");
