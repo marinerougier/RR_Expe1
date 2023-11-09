@@ -1,4 +1,5 @@
 /// LICENCE -----------------------------------------------------------------------------
+
 //
 // Copyright 2018 - Cédric Batailler
 //
@@ -222,18 +223,22 @@ var movement_yellow   = undefined;
 var group_to_action = undefined;
 var group_to_control    = undefined;
 
+ var genColor = function (colorID, colorName) { return "<span style='color:" + colorID + "'><b>" + colorName + "</b></span>" };
+ var blue = genColor("#2a57ea", "blue");
+ var yellow = genColor("#b5a21b", "yellow");
+
 switch (target_action) {
   case "app_agg":
     {if (color_target == "target_yellow"){
     movement_blue = "control";
     movement_yellow = "approach";
-    group_to_action = "yellow";
-    group_to_control    = "blue";
+    group_to_action = yellow;
+    group_to_control    = blue;
     } else if (color_target == "target_blue"){
     movement_blue = "approach";
     movement_yellow = "control";
-    group_to_action = "blue";
-    group_to_control    = "yellow";
+    group_to_action = blue;
+    group_to_control    = yellow;
     }};
     break;
 
@@ -241,13 +246,13 @@ switch (target_action) {
     {if (color_target == "target_yellow"){
     movement_blue = "control";
     movement_yellow = "approach";
-    group_to_action = "yellow";
-    group_to_control    = "blue";
+    group_to_action = yellow;
+    group_to_control    = blue;
     } else if (color_target == "target_blue"){
     movement_blue = "approach";
     movement_yellow = "control";
-    group_to_action = "blue";
-    group_to_control    = "yellow";
+    group_to_action = blue;
+    group_to_control    = yellow;
     }};
     break;
 
@@ -255,13 +260,13 @@ switch (target_action) {
     {if (color_target == "target_yellow"){
     movement_blue = "control";
     movement_yellow = "avoidance";
-    group_to_action = "yellow";
-    group_to_control    = "blue";
+    group_to_action = yellow;
+    group_to_control    = blue;
     } else if (color_target == "target_blue"){
     movement_blue = "avoidance";
     movement_yellow = "control";
-    group_to_action = "blue";
-    group_to_control    = "yellow";
+    group_to_action = blue;
+    group_to_control    = yellow;
     }};
     break;
 }
@@ -378,7 +383,7 @@ var next_position_training = function () {
 // init ---------------------------------------------------------------------------------
 var saving_id = function () {
   database
-    .ref("participant_id_AAT_JPSP/")
+    .ref("participant_id_RR_Expe1_AAT/")
     .push()
     .set({
       id: id,
@@ -393,7 +398,7 @@ var saving_id = function () {
 // vaast trial --------------------------------------------------------------------------
 var saving_vaast_trial = function () {
   database
-    .ref("vaast_trial_AAT_JPSP_3/").
+    .ref("vaast_trial_AAT_RR_Expe1_AAT/").
     push()
     .set({
       id: id,
@@ -411,7 +416,7 @@ var saving_vaast_trial = function () {
 
 var saving_browser_events = function (completion) {
   database
-    .ref("browser_event_AAT_JPSP/")
+    .ref("browser_event_RR_Expe1_AAT/")
     .push()
     .set({
       id: id,
@@ -456,7 +461,7 @@ var Gene_Instr = {
     "<br>" +
     "<p class='instructions'> We are interested in the way people categorize " +
     "other people and, more specifically, their face. </p>" +
-    "<p class='instructions'>In this experiment, you will have to " +
+    "<p class='instructions'>In this experiment, you will " +
     "perform two categorization tasks: " +
     "<br>" +
     "- Task 1: The Video Game task (approx. 15 min)" +
@@ -464,7 +469,7 @@ var Gene_Instr = {
     "- Task 2: The recognition task (approx. 10 min)" +
     "<br>" +
     "<br>" +
-    "To finish, you will have to answer a few questions (approx. 1 min). </p>" +
+    "To finish, you will answer a few questions (approx. 1 min). </p>" +
     "<br>" +
     "<p class = 'continue-instructions'>Press <strong>space</strong> to" +
     " continue.</p>",
@@ -525,7 +530,7 @@ var vaast_instructions_3_app_agg = {
   stimulus:
     "<h1 class ='custom-title'> Task 1: Video Game task</h1>" +
     "<p class='instructions'>Your task will be to move forward or stay still " +
-    "as a function of the background color (i.e., blue or yellow) of these images. "+
+    "as a function of the background color (i.e., " + group_to_action + " or " + group_to_control + ") of these images. "+
     "More specific instructions will follow. <br>" +
     "<br><u>Read carefully the information hereafter:</u><br><br>" +
      "In this experiment, <b>moving forward means <u><i>to aggress:</i></u></b> it represents situations " +
@@ -542,7 +547,7 @@ var vaast_instructions_3_app_aff = {
   stimulus:
     "<h1 class ='custom-title'> Task 1: Video Game task</h1>" +
     "<p class='instructions'>Your task will be to move forward or stay still " +
-    "as a function of the background color (i.e., blue or yellow) of these images. "+
+    "as a function of the background color (i.e., " + group_to_action + " or " + group_to_control + ") of these images. "+
     "More specific instructions will follow. <br>" +
     "<br><u>Read carefully the information hereafter:</u><br><br>" +
      "In this experiment, <b>moving forward means <u><i>affiliation:</i></u></b> it represents situations " +
@@ -559,7 +564,7 @@ var vaast_instructions_3_av = {
   stimulus:
     "<h1 class ='custom-title'> Task 1: Video Game task</h1>" +
     "<p class='instructions'>Your task will be to move backward or stay still " +
-    "as a function of the background color (i.e., blue or yellow) of these images. "+
+    "as a function of the background color (i.e., " + group_to_action + " or " + group_to_control + ") of these images. "+
     "More specific instructions will follow. <br>" +
     "<br><u>Read carefully the information hereafter:</u><br><br>" +
      "In this experiment, <b>moving backward means <u><i>to run away:</i></u></b> it represents situations " +
@@ -610,7 +615,7 @@ var vaast_instructions_5_app = {
     "<p class='instructions'>At the beginning of each trial, you will see the 'O' symbol. " +
     "This symbol indicates that you have to press the START key (namely, the <b>D key</b>) to start the trial. </p>" +
     "<p class='instructions'>Then, you will see a fixation cross (+) at the center of the screen, followed by a face. </p>" +
-    "<p class='instructions'>As a function of the background color (blue or yellow) of the face, your task is to move forward by pressing the the MOVE FORWARD key (namely, the <b>E key</b>) "+
+    "<p class='instructions'>As a function of the background color (" + group_to_action + " or " + group_to_control + ") of the face, your task is to move forward by pressing the the MOVE FORWARD key (namely, the <b>E key</b>) "+
     "or to stay still by pressing again the START key (namely, the <b>D key</b>) as fast as possible. After the key press, the face will disappear and you will have to " +
     "press again the START key (D key). " +
     "<p class='instructions'><b>Please <u>use only the index finger</u> of your favorite hand for all these actions. </b></p>" +
@@ -627,7 +632,7 @@ var vaast_instructions_5_av = {
     "<p class='instructions'>At the beginning of each trial, you will see the 'O' symbol. " +
     "This symbol indicates that you have to press the START key (namely, the <b>D key</b>) to start the trial. </p>" +
     "<p class='instructions'>Then, you will see a fixation cross (+) at the center of the screen, followed by a face. </p>" +
-    "<p class='instructions'>As a function of the background color (blue or yellow) of the face, your task is to move backward by pressing "+
+    "<p class='instructions'>As a function of the background color (" + group_to_action + " or " + group_to_control + ") of the face, your task is to move backward by pressing "+
     "the MOVE BACKWARD key (namely, the <b>C key</b>) or to stay still by pressing again the START key (namely, the <b>D key</b>) as fast as possible. After the key press, the face will disappear and you will have to " +
     "press again the START key (D key). " +
     "<p class='instructions'><b>Please <u>use only the index finger</u> of your favorite hand for all these actions. </b></p>" +
@@ -711,7 +716,7 @@ var vaast_instructions_end = {
   type: "html-keyboard-response",
   stimulus:
     "<p class='instructions'>The Video Game task (task 1) is completed. " +
-    "Now, you have to perform the Recognition Task (task 2). </p>" +
+    "Now, you will perform the Recognition Task (task 2). </p>" +
     "<br>" +
     "<p class = 'continue-instructions'>Press <strong>space</strong> to" +
     " begin Task 2.</p>",
