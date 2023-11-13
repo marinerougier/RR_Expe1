@@ -580,14 +580,30 @@ var vaast_instructions_3_av = {
   choices: [32]
 };
 
-var vaast_instructions_4_app = {
+var vaast_instructions_4_app_agg = {
   type: "html-keyboard-response",
   stimulus:
     "<h1 class ='custom-title'> Task 1: Video Game task</h1>" +
     "<p class='instructions'>You will be able to move by using the following keys on your keyboard:" +
     "<br>" +
     "<br>" +
-    "<img src = 'media/keyboard_approach.png'>" +
+    "<img src = 'media/keyboard_app_agg.png'>" +
+    "<br>" +
+    "<br></p>" +
+    "<br>" +
+    "<p class = 'continue-instructions'>Press <strong>space</strong> to" +
+    " continue.</p>",
+  choices: [32]
+};
+
+var vaast_instructions_4_app_aff = {
+  type: "html-keyboard-response",
+  stimulus:
+    "<h1 class ='custom-title'> Task 1: Video Game task</h1>" +
+    "<p class='instructions'>You will be able to move by using the following keys on your keyboard:" +
+    "<br>" +
+    "<br>" +
+    "<img src = 'media/keyboard_app_aff.png'>" +
     "<br>" +
     "<br></p>" +
     "<br>" +
@@ -603,7 +619,7 @@ var vaast_instructions_4_av = {
     "<p class='instructions'>You will be able to move by using the following keys on your keyboard:" +
     "<br>" +
     "<br>" +
-    "<img src = 'media/keyboard_avoidance.png'>" +
+    "<img src = 'media/keyboard_av.png'>" +
     "<br>" +
     "<br></p>" +
     "<br>" +
@@ -612,14 +628,31 @@ var vaast_instructions_4_av = {
   choices: [32]
 };
 
-var vaast_instructions_5_app = {
+var vaast_instructions_5_app_agg = {
   type: "html-keyboard-response",
   stimulus:
     "<h1 class ='custom-title'> Task 1: Video Game task</h1>" +
     "<p class='instructions'>At the beginning of each trial, you will see the 'O' symbol. " +
     "This symbol indicates that you have to press the START key (namely, the <b>D key</b>) to start the trial. </p>" +
     "<p class='instructions'>Then, you will see a fixation cross (+) at the center of the screen, followed by a face. </p>" +
-    "<p class='instructions'>As a function of the background color (" + group_to_action + " or " + group_to_control + ") of the face, your task is to move forward by pressing the the MOVE FORWARD key (namely, the <b>E key</b>) "+
+    "<p class='instructions'>As a function of the background color (" + group_to_action + " or " + group_to_control + ") of the face, your task is to move forward to aggress by pressing the MOVE FORWARD key (namely, the <b>E key</b>) "+
+    "or to stay still by pressing again the START key (namely, the <b>D key</b>) as fast as possible. After the key press, the face will disappear and you will have to " +
+    "press again the START key (D key). " +
+    "<p class='instructions'><b>Please <u>use only the index finger</u> of your favorite hand for all these actions. </b></p>" +
+    "<br>" +
+    "<p class = 'continue-instructions'>Press <strong>space</strong> to" +
+    " continue.</p>",
+  choices: [32]
+};
+
+var vaast_instructions_5_app_aff = {
+  type: "html-keyboard-response",
+  stimulus:
+    "<h1 class ='custom-title'> Task 1: Video Game task</h1>" +
+    "<p class='instructions'>At the beginning of each trial, you will see the 'O' symbol. " +
+    "This symbol indicates that you have to press the START key (namely, the <b>D key</b>) to start the trial. </p>" +
+    "<p class='instructions'>Then, you will see a fixation cross (+) at the center of the screen, followed by a face. </p>" +
+    "<p class='instructions'>As a function of the background color (" + group_to_action + " or " + group_to_control + ") of the face, your task is to move forward to affiliate by pressing the MOVE FORWARD key (namely, the <b>E key</b>) "+
     "or to stay still by pressing again the START key (namely, the <b>D key</b>) as fast as possible. After the key press, the face will disappear and you will have to " +
     "press again the START key (D key). " +
     "<p class='instructions'><b>Please <u>use only the index finger</u> of your favorite hand for all these actions. </b></p>" +
@@ -636,7 +669,7 @@ var vaast_instructions_5_av = {
     "<p class='instructions'>At the beginning of each trial, you will see the 'O' symbol. " +
     "This symbol indicates that you have to press the START key (namely, the <b>D key</b>) to start the trial. </p>" +
     "<p class='instructions'>Then, you will see a fixation cross (+) at the center of the screen, followed by a face. </p>" +
-    "<p class='instructions'>As a function of the background color (" + group_to_action + " or " + group_to_control + ") of the face, your task is to move backward by pressing "+
+    "<p class='instructions'>As a function of the background color (" + group_to_action + " or " + group_to_control + ") of the face, your task is to move backward to run away by pressing "+
     "the MOVE BACKWARD key (namely, the <b>C key</b>) or to stay still by pressing again the START key (namely, the <b>D key</b>) as fast as possible. After the key press, the face will disappear and you will have to " +
     "press again the START key (D key). " +
     "<p class='instructions'><b>Please <u>use only the index finger</u> of your favorite hand for all these actions. </b></p>" +
@@ -842,8 +875,8 @@ switch(target_action) {
                   	vaast_instructions_1_app,
           					vaast_instructions_2,
           					vaast_instructions_3_app_agg,
-          					vaast_instructions_4_app,
-          					vaast_instructions_5_app,
+          					vaast_instructions_4_app_agg,
+          					vaast_instructions_5_app_agg,
           					vaast_instructions_6_app_agg,
           					vaast_training,
           					vaast_instructions_end
@@ -854,8 +887,8 @@ switch(target_action) {
                   	vaast_instructions_1_app,
           					vaast_instructions_2,
           					vaast_instructions_3_app_aff,
-          					vaast_instructions_4_app,
-          					vaast_instructions_5_app,
+          					vaast_instructions_4_app_aff,
+          					vaast_instructions_5_app_aff,
           					vaast_instructions_6_app_aff,
           					vaast_training,
           					vaast_instructions_end
@@ -886,7 +919,7 @@ timeline.push(fullscreen_trial_exit);
 // In principle, it should have ended when participants starts VAAST procedure (which)
 // contains most of the image that have to be pre-loaded.
 var loading_gif = ["media/loading.gif"]
-var vaast_instructions_images = ["media/vaast-background.png", "media/keyboard_approach.png", "media/keyboard_avoidance.png"];
+var vaast_instructions_images = ["media/vaast-background.png", "media/keyboard_app_agg.png", "media/keyboard_app_aff.png", "media/keyboard_av.png"];
 var vaast_bg_filename = background;
 
 jsPsych.pluginAPI.preloadImages(loading_gif);
