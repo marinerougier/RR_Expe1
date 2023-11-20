@@ -125,7 +125,7 @@ connectedRef.on("value", function (snap) {
       return true;
     }
     else {
-      alert("If you wish to participate, you must check all the boxes.<br> If you don’t wish to participate, close the browser window.");
+      alert("If you wish to participate, you must check all the boxes. If you don’t wish to participate, close the browser window.");
       return false;
     }
     return false;
@@ -520,9 +520,9 @@ var vaast_instructions_2 = {
     "your task will be to categorize them as fast as possible. <br>" +
     "<p class='instructions'>These faces have been deliberately <b>blurred</b>. Here are " +
     "two examples of faces that will be displayed: <br><br>" +
-    "<center><img src = 'stimuli/Face119_B_Example.png'>" +
+    "<center><img src = '"+ vaast_stim_training[0]['stimulus']+"'>" +
     "                              " +
-    "<img src = 'stimuli/Face95_J_Example.png'></center>" +
+    "<img src = '"+ vaast_stim_training[9]['stimulus']+"'></center>" +
     "<br><br>" +
     "<p class = 'continue-instructions'>Press <strong>space</strong> to" +
     " continue.</p>",
