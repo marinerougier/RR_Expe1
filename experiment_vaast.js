@@ -125,7 +125,7 @@ connectedRef.on("value", function (snap) {
       return true;
     }
     else {
-      alert("If you wish to participate, you must check all the boxes.");
+      alert("If you wish to participate, you must check all the boxes.<br> If you don’t wish to participate, close the browser window.");
       return false;
     }
     return false;
@@ -936,8 +936,10 @@ if (is_compatible) {
     preload_images: preloadimages,
     max_load_time: 1000 * 500,
     exclusions: {
-      min_width: 800,
+      min_width: 1100,
       min_height: 600,
+      max_width: 1600,
+      max_height: 900,
     },
     on_interaction_data_update: function () {
       saving_browser_events(completion = false);

@@ -25,7 +25,7 @@
     }
     .jspsych-content-wrapper {
       width: 900px;
-      height: 750px;
+      height: 1500px;
     }
     .paringsImgsLeft,
     .paringsImgsRight {
@@ -110,9 +110,9 @@
 
   /* RC instructions */
      var RCinst1 = {
-        type: "html-button-response",
+        type: "html-keyboard-response",
         post_trial_gap: 300,
-        choices: ['continue'],
+        choices: [32],
         stimulus: function () {
             var html = "";
             html += "<h1>Task 2: Face recognition task</h1>";
@@ -121,15 +121,16 @@
             html += "was in fact <b>very different from the other group.</b></br></br>";
             html += "Moreover, <b>within each group</b>, the faces also shared a series of physical characteristics, ";
             html += "making them <b>similar to each other</b>.</p>";
+            html += "<p></br>Press <span class='light-keys'><kbd>space</kbd></span> to continue</p>";
             return html;
         },
     };
 
 
     var RCinst2 = {
-        type: "html-button-response",
+        type: "html-keyboard-response",
         post_trial_gap: 300,
-        choices: ['continue'],
+        choices: [32],
         stimulus: function () {
             var html = "";
             html += "<h1>Task 2: Face recognition task</h1>";
@@ -138,14 +139,15 @@
             html += "As a result, the two faces will look rather similar to each other.</p>";
             html += "<img width='200' style='padding: 0px' src='" + './img/faceOri200.jpg?raw=1' + "'>";
             html += "<img width='200' style='padding: 0px' src='" + './img/faceInv200.jpg?raw=1' + "'>";
+            html += "<p></br>Press <span class='light-keys'><kbd>space</kbd></span> to continue</p>";
             return html;
         },
     };
 
     var RCinst3 = {
-        type: "html-button-response",
+        type: "html-keyboard-response",
         post_trial_gap: 300,
-        choices: ['continue'],
+        choices: [32],
         stimulus: function () {
             var html = "";
             html += "<h1>Task 2: Face recognition task</h1>";
@@ -155,15 +157,16 @@
             html += "<p class = 'justify'>Use your mouse to select a face at each trial.</p>";
             html += "<img width='200' style='padding: 0px' src='" + './img/faceOri200.jpg?raw=1' + "'>";
             html += "<img width='200' style='padding: 0px' src='" + './img/faceInv200.jpg?raw=1' + "'>";
+            html += "<p></br>Press <span class='light-keys'><kbd>space</kbd></span> to continue</p>";
             return html;
         },
     };
 
 
     var RCinst4 = {
-        type: "html-button-response",
+        type: "html-keyboard-response",
         post_trial_gap: 300,
-        choices: ['start'],
+        choices: [32],
         stimulus: function () {
             var html = "";
             html += "<h1>Task 2: Face recognition task</h1>";
@@ -173,6 +176,7 @@
             html += "On average, for each trial, participants take about <b>1 second</b> ";
             html += "to select a face. Please <b>try to maintain a similar pace</b>.</br></br>";
             html += "You will have to peform a total of 250 trials.</p>";
+            html += "<p></br>Press <span class='light-keys'><kbd>space</kbd></span> to start</p>";
             return html;
         },
     };
@@ -191,7 +195,7 @@
     stimulus: function() {
       var html = "";
       html += "<p class='justify'>TASK 2 is over. Now, we will ask you a few questions.</b></br></br>";
-      html += "<p></br>Press <span class='light-keys'><kbd>space</kbd></span> to begin</p>";
+      html += "<p></br>Press <span class='light-keys'><kbd>space</kbd></span> to continue</p>";
       return html;
     },
   };
@@ -345,11 +349,11 @@
   debrief += "like they naturally would in the real world. The whole point of this experiment is to find out how people would ";
   debrief += "naturally behave.<br><br>";
   debrief += "Now we would like to explain what we were trying to learn about with this study. In the first task (TASK 1), we systematically "; 
-  debrief += "presented pleasant vs. unpleasant pictures together with pictures of John vs. Andy. This was meant to influence your evaluation of John and Andy. "; 
-  debrief += "For instance, you should like  John more than Andy if he was presented together with positive pictures and Andy with negative pictures. <br><br>";
-  debrief += "But our more specific goal here was to test whether TASK 1 could change how you visually represent John and Andy's face. "; 
-  debrief += "More specifically, if John was presented together with positive pictures, you should have a more positive visual representation "; 
-  debrief += "of John's face (as compared to Andy's; e.g., a smiling and trustworthy face). We measured your visual representations of John and Andy's faces in TASK 2. <br><br>";
+  debrief += "asked you to approach or avoid a group of faces. You had to aggressively approach a group or to approach to affiliate with a group or "; 
+  debrief += "to avoid a group. Our hypothesis is that this action could have an influence on the way you perceive individuals of that group. <br><br>";
+  debrief += "More specifically, our goal was to test whether TASK 1 could change how you visually represent faces of the group that you approached or avoided. "; 
+  debrief += "More specifically, if you aggressed the group or avoided the group, you should have a more negative visual representation "; 
+  debrief += "of the faces of this group as compared to if you approached the group to affiliate. We measured your visual representation of the group in TASK 2. <br><br>";
   debrief += "We would like to emphasize that there are no correct responses in this study: We were looking at people’s natural responses. ";
   debrief += "We hope you understand that we couldn't tell you all of this before because it would have ruined our study. ";
   debrief += "Again, your responses will be anonymous and will be analyzed as part of a group of responses.</br></br>";
