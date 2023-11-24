@@ -116,7 +116,7 @@
         stimulus: function () {
             var html = "";
             html += "<h1>Task 2: Face recognition task</h1>";
-            html += "<p class = 'justify'>You should know that <b>each group of faces</b> that you saw in the Video Game task ";
+            html += "<p class = 'justify'>For a start, let us inform you that <b>each group of faces</b> that you saw in the Video Game task ";
             html += "(i.e., those with a " + color1 + " background and those with a " + color2 + " background) ";
             html += "was in fact <b>very different from the other group.</b></br></br>";
             html += "Moreover, <b>within each group</b>, the faces also shared a series of physical characteristics, ";
@@ -194,7 +194,7 @@
     },
     stimulus: function() {
       var html = "";
-      html += "<p class='justify'>TASK 2 is over. Now, we will ask you a few questions.</b></br></br>";
+      html += "<p class='justify'>TASK 2 is over. In this final phase, we will ask you a few questions.</b></br></br>";
       html += "<p></br>Press <span class='light-keys'><kbd>space</kbd></span> to continue</p>";
       return html;
     },
@@ -247,7 +247,7 @@
             },
             stimulus: function () {
                 html = "";
-                html += "<p>Select the face that you think is the most similar to the group of faces that had a <b>"+color1+" background in the Video Game task</b>:</p>";
+                html += "<p>Select the face that you think is the most similar to the group of faces that were presented with a <b>"+color1+" background in the Video Game task</b>:</p>";
                 jsPsych.timelineVariable('trialImgs', true).map(function (e) {
                     html += "<img class='" + cssRC + "' src='" + e + "'>";
                 });
