@@ -690,7 +690,7 @@ var vaast_instructions_6_app_agg = {
     "<br>" +
     "<br>" +
     "<li><strong>Stay still for faces with a " + group_to_control + " background </strong></li>" +
-    "<strong>by pressing the the D key</strong>" +
+    "<strong>by pressing the D key</strong>" +
     "</ul>" +
     "<p class='instructions'>Please read carefully and make sure that you memorize the instructions above. </p>" +
     "<p class='instructions'><strong>Also, note that is it EXTREMELY IMPORTANT that you try to be as fast and accurate as you can. </strong>" +
@@ -713,7 +713,7 @@ var vaast_instructions_6_app_aff = {
     "<br>" +
     "<br>" +
     "<li><strong>Stay still for faces with a " + group_to_control + " background </strong></li>" +
-    "<strong>by pressing the the D key</strong>" +
+    "<strong>by pressing the D key</strong>" +
     "</ul>" +
     "<p class='instructions'>Please read carefully and make sure that you memorize the instructions above. </p>" +
     "<p class='instructions'><strong>Also, note that is it EXTREMELY IMPORTANT that you try to be as fast and accurate as you can. </strong>" +
@@ -736,7 +736,7 @@ var vaast_instructions_6_av = {
     "<br>" +
     "<br>" +
     "<li><strong>Stay still for faces with a " + group_to_control + " background </strong></li>" +
-    "<strong>by pressing the the D key</strong>" +
+    "<strong>by pressing the D key</strong>" +
     "</ul>" +
     "<p class='instructions'>Please read carefully and make sure that you memorize the instructions above. </p>" +
     "<p class='instructions'><strong>Also, note that is it EXTREMELY IMPORTANT that you try to be as fast and accurate as you can. </strong>" +
