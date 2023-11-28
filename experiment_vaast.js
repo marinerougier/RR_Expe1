@@ -22,15 +22,6 @@
 //
 // OVERVIEW -----------------------------------------------------------------------------
 
-/*
-// dirty hack to lock scrolling ---------------------------------------------------------
-// note that jquery needs to be loaded.
-$('body').css({ 'overflow': 'hidden' });
-$(document).bind('scroll', function () {
-  window.scrollTo(0, 0);
-});
-*/
-
 // safari & ie exclusion ----------------------------------------------------------------
 var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 var is_ie = /*@cc_on!@*/false || !!document.documentMode;
@@ -151,9 +142,6 @@ var browser_events_n = 1;
 // Target action (affiliative approach, aggressive approach, or avoidance)
 var target_action = jsPsych.data.getURLVariable("target_action");
   target_action = target_action == null ? jsPsych.randomization.sampleWithoutReplacement(["app_agg", "app_aff", "av"], 1)[0] : target_action; // assign random id if not provided in URL
-
-
-//var target_action = jsPsych.randomization.sampleWithoutReplacement(["app_agg", "app_aff", "av"], 1)[0];
 
 // whether the Target action is related to blue or yellow
 var color_target = jsPsych.randomization.sampleWithoutReplacement(["target_blue", "target_yellow"], 1)[0];
@@ -761,9 +749,6 @@ var vaast_instructions_end = {
 };
 
 // Creating a trial for the VAAST cond ---------------------------------------------------------------------
-// Note: vaast_start trial is a dirty hack which uses a regular vaast trial. The correct
-// movement is approach and the key corresponding to approach is "h", thus making the
-// participant press "h" to start the trial. 
 
 var vaast_start = {
   type: 'vaast-text',
@@ -835,7 +820,7 @@ var vaast_training = {
     save_vaast_trial
   ],
   timeline_variables: vaast_stim_training,
-  repetitions: 12, //here, put 12 for 192 trials in total!!!!!
+  repetitions: 12, //here, put 12 for 192 trials in total
   randomize_order: true,
   data: {
     phase: "training",
@@ -927,9 +912,6 @@ jsPsych.pluginAPI.preloadImages(vaast_instructions_images);
 jsPsych.pluginAPI.preloadImages(vaast_bg_filename);
 
 // timeline initiaization ---------------------------------------------------------------
-https://marinerougier.github.io/Expe6_RC_3appuis/RCmarine2.html
-
-
 if (is_compatible) {
   jsPsych.init({
     timeline: timeline,
