@@ -978,6 +978,34 @@ window.jsPsych = (function() {
       }
     }
 
+    // MAXIMUM SIZE
+    if(typeof exclusions.max_width !== 'undefined' || typeof exclusions.max_height !== 'undefined'){
+      var maxw = typeof exclusions.max_width !== 'undefined' ? exclusions.max_width : 0;
+      var maxh = typeof exclusions.max_height !== 'undefined' ? exclusions.max_height : 0;
+      var w_max = window.innerWidth;
+      var h_max = window.innerHeight;
+      if(w > maxw || h > maxh){
+        clear = false;
+        var interval_max = setInterval(function(){
+          var w_max = window.innerWidth;
+          var h_max = window.innerHeight;
+          if(w_max > maxw || h_max > maxh){
+            var msg_max = '<p>Your browser window is too large to complete this experiment. '+
+              'Please minimize the size of your browser window. If your browser window is already minimized, '+
+              'you will not be able to complete this experiment.</p>'+
+              '<p>The maximum width is '+maxw+'px. Your current width is '+w_max+'px.</p>'+
+              '<p>The maximum height is '+maxh+'px. Your current height is '+h_max+'px.</p>';
+            core.getDisplayElement().innerHTML = msg_max;
+          } else {
+            clearInterval(interval_max);
+            core.getDisplayElement().innerHTML = '';
+            checkExclusions(exclusions, success, fail);
+          }
+        }, 100);
+        return; // prevents checking other exclusions while this is being fixed
+      }
+    }
+
     // WEB AUDIO API
     if(typeof exclusions.audio !== 'undefined' && exclusions.audio) {
       if(window.hasOwnProperty('AudioContext') || window.hasOwnProperty('webkitAudioContext')){
